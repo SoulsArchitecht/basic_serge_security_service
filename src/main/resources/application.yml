@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: basic_serge_security_service
+  jpa:
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5433/user_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema: user_schema
+      connection-init-sql: CREATE SCHEMA IF NOT EXISTS user_schema
+      connection-timeout: 10000
+
+app:
+  security:
+    type: db
